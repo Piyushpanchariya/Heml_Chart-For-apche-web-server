@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webs
+  name: webs
+spec:
+  replicas: {{ .Values.replicaCount   }}
+  selector:
+    matchLabels:
+      app: webs
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webs
+    spec:
+      containers:
+      - image: vimal13/apache-webserver-php:v1
+        name: apache-webserver-php
+        resources: {}
+status: {}
+[root@ip-172-31-44-132 templates]# cat service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webs
+    app.kubernetes.io/managed-by: Helm
+  name: webs
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: webs
+  type: NodePort
+status:
+  loadBalancer: {}
