@@ -1,0 +1,37 @@
+apiVersion: v1
+name: myweb
+Version: 0.1
+appVersion: 1.1
+description: "this is my software"
+
+[root@ip-172-31-44-132 myweb]# cd templates/
+[root@ip-172-31-44-132 templates]# ls
+deployment.yaml  service.yaml  Values.yaml
+[root@ip-172-31-44-132 templates]# clear
+[root@ip-172-31-44-132 templates]# ls
+deployment.yaml  service.yaml  Values.yaml
+[root@ip-172-31-44-132 templates]# cat deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webs
+  name: webs
+spec:
+  replicas: {{ .Values.replicaCount   }}
+  selector:
+    matchLabels:
+      app: webs
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webs
+    spec:
+      containers:
+      - image: vimal13/apache-webserver-php:v1
+        name: apache-webserver-php
+        resources: {}
+status: {}
