@@ -1,7 +1,0 @@
-apiVersion: v1
-name: myweb
-description: "this is my software"
-Version: 0.1
-appVersion: 1.1
-
-
