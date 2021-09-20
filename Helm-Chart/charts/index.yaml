@@ -1,13 +1,14 @@
 apiVersion: v1
 entries:
-  myweb:
-  - apiVersion: v1
-    appVersion: "1.1"
-    created: "2021-09-15T10:54:30.141327333Z"
-    description: this is my software
-    digest: 4292e8de7b94c313aad1d1ad334502b08e79e1f6a19ebe9b7c1e7f2f5193dcc5
-    name: myweb
+  my_web1:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2021-09-20T10:10:23.989767214Z"
+    description: A Helm chart to deploy apache webserver
+    digest: 262463603ea12672fbd4a2abbfbf7a8b9c7fdc782ea5601c22c0a0e1f7688cc7
+    name: my_web1
+    type: application
     urls:
-    - myweb-0.1.tgz
-    version: "0.1"
-generated: "2021-09-15T10:54:30.140443009Z"
+    - my_web1-0.1.0.tgz
+    version: 0.1.0  
+generated: "2021-09-20T10:10:23.989405894Z"
